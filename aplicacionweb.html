@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App UI</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="button">SEE MORE</button>
+    </div>
+    <div class="button-container">
+        <button class="button">LOG IN</button>
+        <button class="button black" onclick="showRegisterForm()">REGISTER</button>
+    </div>
+    
+    <div id="register-form">
+        <h2>Register</h2>
+        <input type="text" placeholder="Username" required><br>
+        <input type="email" placeholder="Email" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button onclick="closeRegisterForm()">Close</button>
+        <button>Submit</button>
+    </div>
+    
+    <div class="profile">
+        <img class="profile-pic" src="https://static.nationalgeographic.es/files/styles/image_3200/public/01-jane-goodall-difficult-women.jpg?w=1900&amp;h=1316" alt="Jane">
+        <h2>Jane</h2>
+        <p>SAN FRANCISCO, CA</p>
+        <button class="button black" id="follow-btn" onclick="followJane()">FOLLOW JANE</button>
+        <button class="button" onclick="showMessageForm()">MESSAGE</button>
+    </div>
+    
+    <div id="message-form">
+        <h2>Send a Message to Jane</h2>
+        <textarea placeholder="Type your message..."></textarea><br>
+        <button onclick="closeMessageForm()">Close</button>
+        <button>Send</button>
+    </div>
+    
+    <div class="gallery">
+        <h2>Photos</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu7vx16XwsUlcvF9ephK3J33c7hU6WzsTU5A&amp;s"  alt="Photo 1">
+        <img src="https://images.unsplash.com/photo-1724758333440-a0f850041c4c?fm=jpg&amp;q=60&amp;w=3000&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXRhcmRlY2VyJTIwZW4lMjBlbCUyMG1hcnxlbnwwfHwwfHx8MA%3D%3D" alt="Photo 2">
+        <img src="https://www.brindamosporviajar.com/wp-content/uploads/2020/03/Atardecer-Gili-Indonesia-1.jpg"  alt="Photo 3">
+    </div>
+    
+    <div class="nav-bar">
+        <button onclick="navigateHome()">🏠</button>
+        <button onclick="search()">🔍</button>
+        <button class="add" onclick="showUploadForm()">+</button>
+        <button onclick="notifications()">🔔</button>
+        <button onclick="profile()">👤</button>
+    </div>
+
+    <div id="upload-form">
+        <h2>Upload a Photo</h2>
+        <input type="file" accept="image/*"><br><br>
+        <button onclick="closeUploadForm()">Cancel</button>
+        <button>Upload</button>
+    </div>
+    
+    <script>
+        function showRegisterForm() {
+            document.getElementById("register-form").style.display = "block";
+        }
+
+        function closeRegisterForm() {
+            document.getElementById("register-form").style.display = "none";
+        }
+
+        function showMessageForm() {
+            document.getElementById("message-form").style.display = "block";
+        }
+
+        function closeMessageForm() {
+            document.getElementById("message-form").style.display = "none";
+        }
+
+        function showUploadForm() {
+            document.getElementById("upload-form").style.display = "block";
+        }
+
+        function closeUploadForm() {
+            document.getElementById("upload-form").style.display = "none";
+        }
+
+        function followJane() {
+            let followBtn = document.getElementById("follow-btn");
+            if (followBtn.innerText === "FOLLOW JANE") {
+                followBtn.innerText = "FOLLOWING";
+                followBtn.style.backgroundColor = "gray";
+            } else {
+                followBtn.innerText = "FOLLOW JANE";
+                followBtn.style.backgroundColor = "black";
+            }
+        }
+
+        function navigateHome() {
+            alert("Going to Home!");
+        }
+
+        function search() {
+            alert("Search function!");
+        }
+
+        function notifications() {
+            alert("Checking notifications!");
+        }
+
+        function profile() {
+            alert("Opening profile!");
+        }
+    </script>
+</body>
+</html>
